@@ -1,0 +1,2 @@
+rootProject.name='UserMessagingApp'
+include ':app'

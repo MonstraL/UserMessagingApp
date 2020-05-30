@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "558542108370",
+    "firebase_url": "https://usermessagingapp.firebaseio.com",
+    "project_id": "usermessagingapp",
+    "storage_bucket": "usermessagingapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558542108370:android:aa6dd001a827aa94601f0b",
+        "android_client_info": {
+          "package_name": "com.stepan.develop.usermessagingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "558542108370-p7vfmj72nj5516rbk5tobif2m5vrjdeg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAutWHo_9Z6Nwoc9YwlMzziIP96nj0wTq0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "558542108370-p7vfmj72nj5516rbk5tobif2m5vrjdeg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
