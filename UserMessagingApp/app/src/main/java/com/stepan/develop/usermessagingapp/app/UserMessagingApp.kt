@@ -3,7 +3,6 @@ package com.stepan.develop.usermessagingapp.app
 import android.app.Application
 import com.stepan.develop.usermessagingapp.di.components.DaggerIUserMessagingAppComponent
 import com.stepan.develop.usermessagingapp.di.components.IUserMessagingAppComponent
-import com.stepan.develop.usermessagingapp.di.modules.UserMessagingAppModule
 
 class UserMessagingApp: Application() {
     private lateinit var userMessagingAppComponent: IUserMessagingAppComponent

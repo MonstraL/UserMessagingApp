@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "558542108370-r1qta9m0lifcpg2frf81ndg5nlc8m549.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.stepan.develop.usermessagingapp",
+            "certificate_hash": "fb91de76298afd444afc7d3d3cf340dd7114a5dc"
+          }
+        },
+        {
           "client_id": "558542108370-p7vfmj72nj5516rbk5tobif2m5vrjdeg.apps.googleusercontent.com",
           "client_type": 3
         }
