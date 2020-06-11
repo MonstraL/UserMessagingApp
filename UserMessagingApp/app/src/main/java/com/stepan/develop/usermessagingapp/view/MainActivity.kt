@@ -2,6 +2,7 @@ package com.stepan.develop.usermessagingapp.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.facebook.*
@@ -28,6 +29,10 @@ class MainActivity : AppCompatActivity(), IMainActivityView {
 
         setupDependencies()
         presenter.attach(this)
+        signInWithPhoneButton.setOnClickListener { presenter.onPhoneAuthButtonClick() }
+        sendSMSButton.setOnClickListener { presenter.onSendSMSButtonClick(phoneNumber.text.toString()) }
+        phoneOutButton.setOnClickListener { presenter.onPhoneAuthOutButtonClick() }
+        verifyButton.setOnClickListener { verifyCode.text?.let{presenter.verifyAuthCode(it.toString())} }
     }
 
     override fun setCallbackManager(callbackManager: CallbackManager) {
@@ -36,11 +41,34 @@ class MainActivity : AppCompatActivity(), IMainActivityView {
 
     override fun updateUserLoginFields(user: FirebaseUser?) {
         if(user != null) {
-            user.displayName?.let { showToast(it) }
-            userEmail.setText(user.email)
+            if(user.email != null && user.email!!.isNotEmpty()) {
+                userEmail.setText(user.email)
+            } else {
+                userEmail.setText(user.phoneNumber)
+            }
+
         } else {
             userEmail.setText("")
-        }    }
+        }
+    }
+
+    override fun showPhoneNumberFields() {
+        signInWithPhoneButton.visibility = View.GONE
+        phoneNumberLayout.visibility = View.VISIBLE
+    }
+
+    override fun hidePhoneNumberFields() {
+        phoneNumberLayout.visibility = View.GONE
+        signInWithPhoneButton.visibility = View.VISIBLE
+    }
+
+    override fun showVerifyFields() {
+        verifyCodeLayout.visibility = View.VISIBLE
+    }
+
+    override fun hideVerifyFields() {
+        verifyCodeLayout.visibility = View.INVISIBLE
+    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         callbackManager.onActivityResult(requestCode, resultCode, data)

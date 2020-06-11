@@ -7,4 +7,8 @@ interface IMainActivityView {
     fun showToast(text: String)
     fun setCallbackManager(callbackManager: CallbackManager)
     fun updateUserLoginFields(user: FirebaseUser?)
+    fun showPhoneNumberFields()
+    fun hidePhoneNumberFields()
+    fun showVerifyFields()
+    fun hideVerifyFields()
 }

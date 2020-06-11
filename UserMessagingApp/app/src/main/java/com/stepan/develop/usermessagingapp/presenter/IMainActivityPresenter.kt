@@ -10,6 +10,11 @@ interface IMainActivityPresenter {
     fun facebookOnError(error: FacebookException?)
     fun facebookOnCancel()
 
+    fun onPhoneAuthButtonClick()
+    fun onSendSMSButtonClick(phoneNumber: String)
+    fun onPhoneAuthOutButtonClick()
+    fun verifyAuthCode(code: String)
+
     fun addAuthStateListener()
     fun removeAuthStateListener()
 }
